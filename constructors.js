@@ -15,6 +15,10 @@
 */
 
 // Code here
+function CarFactory(make, model){
+  this.make = make
+  this.model = model
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -25,6 +29,7 @@ function Employee(name, email, hireDate) {
   this.email = email;
   this.hireDate = hireDate;
 }
+let bob = new Employee('Bob', 'bob@gmail.com', '01-02-98')
 
 // Do not edit the code above.
 
@@ -57,6 +62,14 @@ mustang.moveCar(); // Increments mustang' move property by 10. Returns the new m
 */
 
 // Code here
+function Car(make, model, year){
+  this.make = make
+  this.model = model
+  this.year = year
+  this.moveCar = () => {
+    
+  }
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -74,6 +87,10 @@ function Movie(name, genre, rating) {
   this.genre = genre;
   this.rating = rating;
 }
+Movie.prototype.changeRating = function(number, rating){
+  const newRating = (number + rating)/2
+  return newRating
+}
 
 // Code here
 
@@ -84,6 +101,12 @@ function Movie(name, genre, rating) {
 // Once the User constructor function is created, write a prototype method for the User function. Name this method addSavedPost. It should take in three parameters: id (a number), title (a string) and rating (a number). Use these parameters to create a new object and add it to the savedPosts array. Make sure to name the properties the same as described previously (id, title, rating).
 
 // Code here
+function User(name, age, email, savedPosts){
+  this.name = " "
+  this.age = age
+  this.email = " "
+  savedPosts = []
+}
 
 ////////// PROBLEM 6 //////////
 

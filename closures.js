@@ -228,4 +228,4 @@ function timeOutCounter() {
     }, i * 1000);
   }
 }
-timeOutCounter();
+timeOutCounter()

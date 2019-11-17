@@ -221,8 +221,9 @@ function secretNumber() {
 */
 
 function timeOutCounter() {
-    var num = i
+    
   for (var i = 0; i <= 5; i++) {
+    let num = i
      setTimeout(function() {
       console.log(num);
     }, i * 1000);

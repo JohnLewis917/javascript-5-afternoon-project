@@ -127,19 +127,17 @@ var counter = counterFactory(10);
   (Hint: don't forget to have a space between the firstname and lastname and a period at the end of the sentence.)
 */
 
-function motivation( firstname, lastname ) {
-  var welcomeText = "You're doing awesome, keep it up";
+function motivation(firstname, lastname) {
+  var welcomeText = 'You\'re doing awesome, keep it up';
 
   // code message function here.
-  function message(fname, lname){
-    return ("You're doing awesome, keep it up" + '' + fname + '' + lname)
+  function message(){
+    return welcomeText + ' ' + firstname + ' ' + lastname + "."
 
   //Uncommment this to return the value of your message function
-  return message
-    
-  
+};
+return message;
 }
-
 var greeting = motivation('Billy', 'Bob'); // 'You're doing awesome keep it up Billy Bob.
 
 
@@ -189,16 +187,17 @@ function secretNumber() {
 
   return {
     // Code here
-    addToSecret: secret => {
-      secret++
-      return secret
+    addToSecret: (val) => {
+      secret = secret + val;
+      return secret;
     },
-    takeAwayFromSecret: secret => {
-      secret--
-      return secret
+    takeAwayFromSecret: (val) => {
+      secret = secret - val;
+      return secret;
     }
   };
 }
+let newSecret = secretNumber()
 
 
 
@@ -224,7 +223,7 @@ function timeOutCounter() {
     
   for (var i = 0; i <= 5; i++) {
     let num = i
-     setTimeout(function() {
+     setTimeout(() => {
       console.log(num);
     }, i * 1000);
   }

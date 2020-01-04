@@ -109,17 +109,13 @@ Movie.prototype.changeRating = function(number, rating){
 
 // Code here
 function User(name, age, email, savedPosts){
-  this.name = '' 
-  this.age = 0
-  this.email = '' 
-  this.savedPosts = [{
-    id: 0,
-    title: '',
-    rating: 0
-  }]
+  this.name = name;
+  this.age = age;
+  this.email = email;
+  this.savedPosts = savedPosts;
 }
 User.prototype.addSavedPosts = function(id, title, rating) {
-  this.savedPosts.push([{id, title, rating}])
+  this.savedPosts.push({id, title, rating})
 }
 
 ////////// PROBLEM 6 //////////
@@ -130,8 +126,8 @@ User.prototype.addSavedPosts = function(id, title, rating) {
 
 // Code here
 User.prototype.removeSavedPosts = function(number) {
-  const index = this.savedPosts.findIndex(post => post===number)
-  return this.savedPosts.splice(index,1)
+  const index = this.savedPosts.findIndex(post => post === number);
+  return this.savedPosts.splice(index, 1);
 }
 
 ////////// PROBLEM 7 //////////
@@ -143,7 +139,22 @@ User.prototype.removeSavedPosts = function(number) {
 //Once you find the matching object, update it's rating score with the new rating parameter.
 
 // Code here
-User.prototype.changePostRatings = function(id, number) {
-  const index = this.savedPosts.findIndex(id => id === savedPosts.id)
-  User.savedPosts[index].rating = number 
+
+function User(name, age, email, savedPosts) {
+  this.name = name;
+  this.age = age;
+  this.email = email;
+  this.savedPosts = savedPosts;
+}
+
+User.prototype.addSavedPost = function(id, title, rating) {
+  this.savedPosts.push({id, title, rating})
+}
+
+User.prototype.removeSavedPost = function(id) {
+  this.savedPosts = this.savedPosts.filter(e => e.id !== id)
+}
+
+User.prototype.changePostRating = function(id, num) {
+  this.savedPosts.map(e => e.id === id ? e.rating = num : null)
 }
